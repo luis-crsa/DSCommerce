@@ -1,15 +1,8 @@
 package com.devsuperior.dscommerce.entities;
 
-import java.time.Instant;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MapsId;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import java.time.Instant;
 
 @Entity
 @Table(name = "tb_payment")
@@ -83,5 +76,4 @@ public class Payment {
             return false;
         return true;
     }
-
 }

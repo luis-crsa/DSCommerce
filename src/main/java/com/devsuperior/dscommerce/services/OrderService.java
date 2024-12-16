@@ -38,7 +38,7 @@ public class OrderService {
     @Transactional(readOnly = true)
     public OrderDTO findById(Long id){
         Optional<Order> result = orderRepository.findById(id);
-        Order order = result.orElseThrow(() -> new ResourceNotFoundException("Recurso não encontrado"));
+        Order order = result.orElseThrow(() -> new ResourceNotFoundException("Resource not found"));
         authService.validateSelfOrAdmin(order.getClient().getId());
         return new OrderDTO(order);
     }
@@ -49,7 +49,7 @@ public class OrderService {
         Order order = new Order();
 
         order.setMoment(Instant.now());
-        order.setStatus(OrderStatus.WAITING_PAYMANT);
+        order.setStatus(OrderStatus.WAITING_PAYMENT);
         order.setClient(userService.authenticated());
 
         for(OrderItemDTO itemDto : dto.getItems()){

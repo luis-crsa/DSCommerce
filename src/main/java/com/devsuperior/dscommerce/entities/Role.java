@@ -1,12 +1,7 @@
 package com.devsuperior.dscommerce.entities;
 
+import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_role")
@@ -67,5 +62,4 @@ public class Role implements GrantedAuthority{
             return false;
         return true;
     }
-
 }

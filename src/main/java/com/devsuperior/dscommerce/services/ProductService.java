@@ -28,7 +28,7 @@ public class ProductService {
     @Transactional(readOnly = true)
     public ProductDTO findById(Long id){
         Optional<Product> result = productRepository.findById(id);
-        Product product = result.orElseThrow(() -> new ResourceNotFoundException("Recurso não encontrado"));
+        Product product = result.orElseThrow(() -> new ResourceNotFoundException("Resource not found"));
         ProductDTO dto = new ProductDTO(product);
         return dto;
     }
@@ -56,19 +56,19 @@ public class ProductService {
             entity = productRepository.save(entity);
             return new ProductDTO(entity);
         } catch (EntityNotFoundException e) {
-            throw new ResourceNotFoundException("Recurso não encontrado");
+            throw new ResourceNotFoundException("Resource not found");
         }
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
     public void delete(Long id){
         if (!productRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Resurso não encontrado");
+            throw new ResourceNotFoundException("Resource not found");
         }
         try {
             productRepository.deleteById(id);
         } catch (DataIntegrityViolationException e) {
-            throw new DatabaseException("Falha de integridade referencial");
+            throw new DatabaseException("Referential integrity failure");
         }
     }
 
@@ -85,5 +85,4 @@ public class ProductService {
             entity.getCategories().add(cat);
         }
     }
-    
 }

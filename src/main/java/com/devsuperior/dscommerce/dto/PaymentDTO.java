@@ -1,7 +1,6 @@
 package com.devsuperior.dscommerce.dto;
 
 import com.devsuperior.dscommerce.entities.Payment;
-import jakarta.persistence.Column;
 
 import java.time.Instant;
 
