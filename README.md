@@ -1,7 +1,7 @@
-# 📦Ecommerce
+# 📦E-commerce
 Aplicação backend de um e-commerce, onde é possível gerenciar usuários, produtos e categorias. O projeto foi desenvolvido durante o curso Java Spring Professional da [DevSuperior](https://devsuperior.com.br/).
 
-## 🛠️ Tecnologias utilizadas  
+## 🛠️Tecnologias utilizadas  
 - [Java](https://www.java.com/)  
 - [Spring Boot](https://spring.io/projects/spring-boot)  
 - [JPA / Hibernate](https://hibernate.org/)  
@@ -11,7 +11,7 @@ Aplicação backend de um e-commerce, onde é possível gerenciar usuários, pro
 ## 🗺️Modelo conceitual
 ![image](https://github.com/user-attachments/assets/189b892e-8bff-440d-97e5-40e2087ccf28)
 
-## 📍 Endpoints da API
+## 📍Endpoints da API
 
 ### 🪪Auth
 - **POST** `/oauth2/token` - Realiza a autenticação do usuário e retorna um token de acesso JWT para ser usado nas requisições subsequentes.
